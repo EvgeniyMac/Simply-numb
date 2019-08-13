@@ -7,17 +7,14 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.gradientBackgroundColor()
+         view.gradientBackgroundColor()
     }
-    
-
-
- 
     
     // Change status bar color
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -25,6 +22,12 @@ class ViewController: UIViewController {
     }
     
     // Make botton layer with gradient
-
+    
+    @IBAction func AcButtonTapped(_ sender: UIButton) {
+      //   AudioServicesPlaySystemSound(0x450)
+    }
+    
 }
+
+
 
