@@ -59,15 +59,39 @@
 			isa = PBXGroup;
 			children = (
 				81B714C82300462F008CAED5 /* AppDelegate.swift */,
-				81B714CA2300462F008CAED5 /* ViewController.swift */,
+				81DFD4C123023B140083E357 /* Controllers */,
+				81DFD4BF23023AD20083E357 /* Extension */,
+				81DFD4C023023AFD0083E357 /* View */,
+			);
+			path = "Simply numb";
+			sourceTree = "<group>";
+		};
+		81DFD4BF23023AD20083E357 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
 				813A8E6E2301D86400DA22A8 /* ButtonExtension.swift */,
 				819D252A2300F5800057EB50 /* UIViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		81DFD4C023023AFD0083E357 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				81B714CC2300462F008CAED5 /* Main.storyboard */,
 				81B714CF23004630008CAED5 /* Assets.xcassets */,
 				81B714D123004630008CAED5 /* LaunchScreen.storyboard */,
 				81B714D423004630008CAED5 /* Info.plist */,
 			);
-			path = "Simply numb";
+			path = View;
+			sourceTree = "<group>";
+		};
+		81DFD4C123023B140083E357 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81B714CA2300462F008CAED5 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +316,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5U6B2N2Y5;
-				INFOPLIST_FILE = "Simply numb/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Simply numb/View/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -311,7 +335,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5U6B2N2Y5;
-				INFOPLIST_FILE = "Simply numb/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Simply numb/View/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
