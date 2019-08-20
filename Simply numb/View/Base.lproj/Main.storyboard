@@ -164,8 +164,8 @@
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="equalityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rsK-2c-6JQ"/>
-                                                    <action selector="twoOperendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JBJ-r9-DDt"/>
+                                                    <action selector="equalityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ak-SI-jmy"/>
+                                                    <action selector="twoOperendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggO-X8-7df"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fD8-er-vs1">
@@ -233,8 +233,8 @@
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="equalityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BRo-Pw-hFD"/>
-                                                    <action selector="twoOperendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gQ5-QE-jiv"/>
+                                                    <action selector="equalityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcb-9X-z3g"/>
+                                                    <action selector="twoOperendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l2W-fe-hjf"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19o-Oc-24g">
@@ -302,8 +302,8 @@
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="equalityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7ag-WQ-x1s"/>
-                                                    <action selector="twoOperendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5dm-tW-Jx8"/>
+                                                    <action selector="equalityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkV-No-4RI"/>
+                                                    <action selector="twoOperendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xg5-kn-7Yy"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVI-dt-f5g">
@@ -354,8 +354,8 @@
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="equalityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1bv-Dw-ek3"/>
-                                                    <action selector="twoOperendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fCk-eZ-wVz"/>
+                                                    <action selector="equalityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gSZ-Xo-hTX"/>
+                                                    <action selector="twoOperendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Za-82-nvn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZc-LA-8MQ">
@@ -384,6 +384,9 @@
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="removeLastButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zbr-vB-wb4"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVY-MO-SPU">
                                                 <rect key="frame" x="279" y="372" width="90" height="72"/>

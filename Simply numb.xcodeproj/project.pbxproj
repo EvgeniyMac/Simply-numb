@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		813A8E6F2301D86500DA22A8 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A8E6E2301D86400DA22A8 /* ButtonExtension.swift */; };
-		819D252B2300F5800057EB50 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819D252A2300F5800057EB50 /* UIViewExtension.swift */; };
 		81B714C92300462F008CAED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B714C82300462F008CAED5 /* AppDelegate.swift */; };
 		81B714CB2300462F008CAED5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B714CA2300462F008CAED5 /* ViewController.swift */; };
 		81B714CE2300462F008CAED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B714CC2300462F008CAED5 /* Main.storyboard */; };
@@ -18,7 +17,6 @@
 
 /* Begin PBXFileReference section */
 		813A8E6E2301D86400DA22A8 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
-		819D252A2300F5800057EB50 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		81B714C52300462F008CAED5 /* Simply numb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simply numb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B714C82300462F008CAED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81B714CA2300462F008CAED5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				813A8E6E2301D86400DA22A8 /* ButtonExtension.swift */,
-				819D252A2300F5800057EB50 /* UIViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -165,7 +162,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819D252B2300F5800057EB50 /* UIViewExtension.swift in Sources */,
 				813A8E6F2301D86500DA22A8 /* ButtonExtension.swift in Sources */,
 				81B714CB2300462F008CAED5 /* ViewController.swift in Sources */,
 				81B714C92300462F008CAED5 /* AppDelegate.swift in Sources */,
