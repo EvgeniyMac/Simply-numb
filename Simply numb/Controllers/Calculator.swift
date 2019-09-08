@@ -9,7 +9,7 @@
 import UIKit
 import AudioToolbox
 
-class ViewController: UIViewController {
+class Calculator: UIViewController {
     
     
     @IBOutlet weak var displayResultLabel: UILabel!
@@ -21,19 +21,17 @@ class ViewController: UIViewController {
     var firstOperand: Double = 0
     var secondOperand: Double = 0
     var operationSign: String = ""
-    var ansOperand = false
     var ansOperandNumber = 0.0
-    var number: String = ""
     var alert = false
-    var minus = false
+    var procentMinusOrAns = false
     
-
+    
     var currentInput: Double {
         get {
             if Double(displayResultLabel.text!) == nil {
                 return 0
             } else {
-               return Double(displayResultLabel.text!)!
+                return Double(displayResultLabel.text!)!
             }
         }
         
@@ -63,8 +61,8 @@ class ViewController: UIViewController {
     
     @IBAction func numberPressed(_ sender: UIButton) {
         
-        number = sender.currentTitle!
-    
+        let number = sender.currentTitle!
+        
         if stillTyping && currentInput != 0 {
             guard displayResultLabel.text!.count < 12 else { return }
             displayResultLabel.text = displayResultLabel.text! + number
@@ -76,17 +74,21 @@ class ViewController: UIViewController {
         } else if currentInput == 0 && !operationSign.isEmpty && !pointIsPlace {
             displayResultLabel.text! = number
             showResulsLabel.text?.removeLast()
-             showResulsLabel.text! += number
+            showResulsLabel.text! += number
             stillTyping = true
-        } else if pointIsPlace {
+        } else if pointIsPlace && stillTyping {
             displayResultLabel.text! += number
             showResulsLabel.text! += number
+        } else if !procentMinusOrAns {
+            stillTyping = false
+            procentMinusOrAns = false
         } else {
             displayResultLabel.text = number
             showResulsLabel.text! += number
             stillTyping = true
+            procentMinusOrAns = false
         }
-    
+        
         if showResulsLabel.text!.count > 27 {
             showResulsLabel.text = "..."
         }
@@ -100,6 +102,7 @@ class ViewController: UIViewController {
         firstOperand = currentInput
         stillTyping = false
         pointIsPlace = false
+        procentMinusOrAns = true
         errorDivideZero(sender: sender)
     }
     
@@ -109,7 +112,7 @@ class ViewController: UIViewController {
         if stillTyping {
             secondOperand = currentInput
         }
-
+        
         pointIsPlace = false
         
         
@@ -119,21 +122,22 @@ class ViewController: UIViewController {
         case "×": operateWithTwoOperands{$0 * $1}
         case "÷":
             if secondOperand == 0.0 {
-                 showResulsLabel.text = "Error! You can divide by zero"
-                    stillTyping = false
-                } else {
+                showResulsLabel.text = "Error! You can't divide by zero"
+                stillTyping = false
+            } else {
                 operateWithTwoOperands{$0 / $1}
             }
         default: break
         }
-  
-        showResultinSecondLabel(sender: sender)
 
+        showResultinSecondLabel(sender: sender)
+        
     }
     
     // Button clear all
     
     @IBAction func AcButtonTapped(_ sender: UIButton) {
+        
         firstOperand = 0
         secondOperand = 0
         currentInput = 0
@@ -142,8 +146,8 @@ class ViewController: UIViewController {
         stillTyping = false
         operationSign = ""
         pointIsPlace = false
-        ansOperand = false
         alert = false
+        procentMinusOrAns = false
         AudioServicesPlaySystemSound(0x450)
     }
     
@@ -151,25 +155,28 @@ class ViewController: UIViewController {
     @IBAction func plusMinusButton(_ sender: UIButton) {
         
         currentInput = -currentInput
+        
         if firstOperand == 0.0 {
             showResulsLabel.text! = displayResultLabel.text!
         } else {
             secondOperand = currentInput
-
-             let numberCount = displayResultLabel.text!.count
+            
+            let numberCount = displayResultLabel.text!.count
             
             if (secondOperand < 0)
             {
-              let ourString = showResulsLabel.text!.removeCharsFromEnd(count: numberCount - 1)
+                let ourString = showResulsLabel.text!.removeCharsFromEnd(count: numberCount - 1)
                 showResulsLabel.text = ourString + "(\(displayResultLabel.text!))"
             }
             else
             {
                 let ourString = showResulsLabel.text!.removeCharsFromEnd(count: numberCount + 3)
-                showResulsLabel.text = ourString + "\(displayResultLabel.text!)"
+                showResulsLabel.text = ourString + displayResultLabel.text!
             }
             
         }
+        
+        procentMinusOrAns = false
         stillTyping = false
         errorDivideZero(sender: sender)
     }
@@ -177,30 +184,41 @@ class ViewController: UIViewController {
     // Button save constant in memory
     @IBAction func ansButtonPresed(_ sender: UIButton) {
         
-        if ansOperand {
+        let ansInMemory = sender.currentTitle!
+        
+        
+        if !procentMinusOrAns && stillTyping {
+            ansOperandNumber = currentInput
+            secondOperand = currentInput
+            showResulsLabel.text! += ansInMemory
+        } else if procentMinusOrAns {
             displayResultLabel.text = String(ansOperandNumber)
             currentInput = ansOperandNumber
             secondOperand = currentInput
-        } else {
-            ansOperandNumber = currentInput
-            ansOperand = true
+            showResulsLabel.text! += ansInMemory
         }
-       
         
+        stillTyping = false
+        procentMinusOrAns = false
         errorDivideZero(sender: sender)
     }
     
     // Button procent for number
     @IBAction func procentButton(_ sender: UIButton) {
         
-        if firstOperand == 0 {
-            currentInput = currentInput / 100
+        let procentSender = sender.currentTitle!
+        
+        
+        if currentInput == 0 {
+            secondOperand = currentInput
         } else {
             currentInput = currentInput / 100
-             secondOperand = currentInput
+            secondOperand = currentInput
+            showResulsLabel.text! += procentSender
         }
-        stillTyping = false
         
+        stillTyping = false
+        procentMinusOrAns = false
         errorDivideZero(sender: sender)
     }
     
@@ -212,41 +230,45 @@ class ViewController: UIViewController {
             displayResultLabel.text = displayResultLabel.text! + "."
             showResulsLabel.text! = showResulsLabel.text! + "."
             pointIsPlace = true
-    
-        } else if !stillTyping && !pointIsPlace {
+            
+        } else if !stillTyping && !pointIsPlace && procentMinusOrAns {
             displayResultLabel.text! += "."
             showResulsLabel.text! += "."
             pointIsPlace = true
             
         }
-    
+        procentMinusOrAns = false
         errorDivideZero(sender: sender)
     }
     
-    // Button remove last text in 1 and second label
+    
+    
+    
+    
+    // Remove last characters
     
     @IBAction func removeLastButton(_ sender: UIButton) {
-    
-        var number: String = "\(currentInput)"
-        number = String(showResulsLabel.text!.dropLast())
+
         
-        if showResulsLabel.text!.count < 2 {
-            currentInput = 0.0
-        } else {
-            if let cost = Double(number) {
-                currentInput = cost
-            } else {
-               currentInput = -0
-            }
-        }
-        
-        if showResulsLabel.text!.count < 2  {
-            showResulsLabel.text = "0"
-        } else {
-           showResulsLabel.text = String(showResulsLabel.text!.dropLast())
-        }
         errorDivideZero(sender: sender)
     }
+    
+    // Remove last Action
+    
+    @IBAction func cancelActionButton(_ sender: UIButton) {
+        
+
+        errorDivideZero(sender: sender)
+    }
+    
+    // Return last Action
+    
+    @IBAction func returnCancelActionButton(_ sender: UIButton) {
+        
+
+        errorDivideZero(sender: sender)
+    }
+    
     
     // Method works with two operands
     
@@ -258,18 +280,20 @@ class ViewController: UIViewController {
     
     // Method Show result in second label and Check for divide for 0
     func showResultinSecondLabel(sender: UIButton) {
-        if showResulsLabel.text != "Error! You can divide by zero" {
+        if showResulsLabel.text != "Error! You can't divide by zero" {
             showResulsLabel.text = showResulsLabel.text! + sender.currentTitle!
             let results = showResulsLabel.text!.last
             if results == "=" {
                 showResulsLabel.text! += displayResultLabel.text!
             }
         } else {
-            showResulsLabel.text = "Error! You can divide by zero"
+            showResulsLabel.text = "Error! You can't divide by zero"
             alert = true
         }
         
     }
+    
+
     
     // Method reset all button after you divide by zero + play push button sound
     
@@ -283,7 +307,7 @@ class ViewController: UIViewController {
             stillTyping = false
             operationSign = ""
             pointIsPlace = false
-            ansOperand = false
+            //  ansOperand = false
             alert = false
         } else {
             AudioServicesPlaySystemSound(0x450)
