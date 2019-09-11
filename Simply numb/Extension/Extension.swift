@@ -16,7 +16,7 @@ extension UIButton {
         didSet {
             backgroundColor = isHighlighted ? UIColor(red: 158 / 255, green: 123 / 255, blue: 91 / 255, alpha: 0.5) : UIColor(red: 77 / 255, green: 60 / 255, blue: 44 / 255, alpha: 1.0)
         }
-    }
+    } 
 }
 
 extension Double {
