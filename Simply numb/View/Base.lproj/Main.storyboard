@@ -358,7 +358,7 @@
                                                     <action selector="twoOperendsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Za-82-nvn"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZc-LA-8MQ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZc-LA-8MQ" userLabel="return">
                                                 <rect key="frame" x="2" y="216" width="76.5" height="41"/>
                                                 <color key="backgroundColor" red="0.30358529090881348" green="0.23594069480895996" blue="0.17226722836494446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="AppleMyungjo" family="AppleMyungjo" pointSize="28"/>
@@ -375,7 +375,7 @@
                                                     <action selector="returnCancelActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bdc-Zu-m82"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFM-Am-9fV">
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFM-Am-9fV" userLabel="backspace">
                                                 <rect key="frame" x="159" y="216" width="76.5" height="41"/>
                                                 <color key="backgroundColor" red="0.30358529090881348" green="0.23594069480895996" blue="0.17226722836494446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal">
@@ -408,7 +408,7 @@
                                                     <action selector="equalityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LyZ-sG-r2s"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppT-nR-spa">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppT-nR-spa" userLabel="delete">
                                                 <rect key="frame" x="80.5" y="216" width="76.5" height="41"/>
                                                 <color key="backgroundColor" red="0.30358529090881348" green="0.23594069480895996" blue="0.17226722836494446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
