@@ -275,7 +275,11 @@ final class Calculator: UIViewController {
         if currentInput == 0 {
             secondOperand = currentInput
         } else {
-            currentInput = currentInput / 100
+            if firstOperand == 0 {
+               currentInput = currentInput / 100
+            } else {
+              currentInput = currentInput / 100 * firstOperand
+            }
             secondOperand = currentInput
             showArrayAction.append(procentSender)
         }
